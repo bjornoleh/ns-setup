@@ -2,7 +2,7 @@ version: '3.9'
 
 x-ns-common-env: &ns-common-env
   NODE_ENV: production
-  TZ: Europe/Moscow
+  TZ: Europe/Oslo
   TIME_FORMAT: 24
   INSECURE_USE_HTTP: 'true'
   ENABLE: basal iob cob boluscalc cage sage iage bage pump openaps pushover bgi food rawbg
@@ -20,7 +20,7 @@ services:
       - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
 
   nightscout:
-    image: nightscout/cgm-remote-monitor:latest
+    image: bjornoleh/nightscout:latest
     container_name: nightscout
     restart: always
     depends_on:

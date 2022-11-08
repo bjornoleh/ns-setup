@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while [[ ! "$domain" =~ ^[a-zA-Z0-9-]+$ ]]; do
-  echo "Введите имя поддомена, на котором ваш Nightscout будет доступен:"
+  echo "Enter the name of the subdomain where your Nightscout will be available:"
   read domain
 done
 secret=$(cat /proc/sys/kernel/random/uuid)

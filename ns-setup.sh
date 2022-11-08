@@ -24,7 +24,7 @@ echo Итак, немного настроек
 echo
 
 while [[ ! "$domain" =~ ^([a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$ ]]; do
-  echo "Введите имя домена, на котором ваш Nightscout будет доступен:"
+  echo "Enter the name of the domain where your Nightscout will be available:"
   read domain
 done
 echo "NS_DOMAIN=$domain" >> .env
@@ -37,6 +37,6 @@ curl https://raw.githubusercontent.com/justmara/ns-setup/jino/docker-compose.yml
 
 sudo docker compose up -d
 
-echo "Ваш секретный ключ для доступа к Nightscout (запишите!):"
+echo Your secret key to access Nightscout (write it down!):"
 echo "secret: $secret"
 echo "domain: $domain"

@@ -37,6 +37,6 @@ curl https://raw.githubusercontent.com/bjornoleh/ns-setup/jino-bo/docker-compose
 
 sudo docker compose up -d
 
-echo Your secret key to access Nightscout (write it down!):"
+echo "Your secret key to access Nightscout (write it down!):"
 echo "secret: $secret"
 echo "domain: $domain"

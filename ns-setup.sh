@@ -6,7 +6,8 @@ sudo apt-get -y install \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release
+    lsb-release \
+    nano
 
 sudo mkdir -p /etc/apt/keyrings
 

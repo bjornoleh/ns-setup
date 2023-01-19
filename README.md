@@ -14,10 +14,21 @@ Once all the mentioned preparations done you do:
 1. ssh to your VPS
 2. write
 
-bash <(wget -qO- https://raw.githubusercontent.com/bjornoleh/ns-setup/bo-multi/ns-setup.sh)
+`bash <(wget -qO- https://raw.githubusercontent.com/bjornoleh/ns-setup/bo-multi/ns-setup.sh)`
 
  in console, press enter and follow installation instructions.
 3. enjoy your private nightscout installation
+
+## Recreate Nightscout setup on a new VPS from backup of docker-compose.yml and .env files
+With all the previously mentioned prerequisites for your VPS in place:
+1. ssh to your VPS
+2. write
+
+`bash <(wget -qO- https://raw.githubusercontent.com/bjornoleh/ns-setup/bo-multi/ns-setup-recreate.sh)` 
+
+3. Copy your docker-compose.yml and .env files to your directory of choice
+4. Start your Nightscout site(s) by writing:
+`sudo docker compose up -d`
 
 ## Migrating old data
 This section is optional, for advanced users that want to transfer their data from old Nightscout installation.

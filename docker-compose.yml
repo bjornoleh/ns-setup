@@ -2,10 +2,10 @@ version: '3.9'
 
 x-ns-common-env: &ns-common-env
   NODE_ENV: production
-  INSECURE_USE_HTTP: 'true'
-  TZ: Europe/Moscow
-  TIMEZONE: Europe/Moscow
+  TZ: Europe/Oslo
+  TIMEZONE: Europe/Oslo
   TIME_FORMAT: 24
+  INSECURE_USE_HTTP: 'false'
   DEVICESTATUS_ADVANCED: 'true'
   DISPLAY_UNITS: mmol
   LANGUAGE:
@@ -29,7 +29,7 @@ services:
     volumes:
       - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
     ports:
-      - "27018:27017"
+      - "27017"
     logging: *default-logging
 
   traefik:

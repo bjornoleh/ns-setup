@@ -57,6 +57,13 @@ x-ns-common-env: &ns-common-env
   THEME: colors  
    
 
+x-logging:
+  &default-logging
+  options:
+    max-size: '10m'
+    max-file: '5'
+  driver: json-file
+
 services:
   mongo:
     image: mongo:4.4
@@ -65,7 +72,7 @@ services:
     volumes:
       - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
     ports:
-      - "27017"
+    logging: *default-logging
 
   traefik:
     image: traefik:latest
@@ -88,3 +95,4 @@ services:
     volumes:
       - './letsencrypt:/letsencrypt'
       - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    logging: *default-logging

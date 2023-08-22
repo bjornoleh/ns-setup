@@ -5,7 +5,7 @@ x-ns-common-env: &ns-common-env
   TZ: Europe/Oslo
   TIMEZONE: Europe/Oslo
   TIME_FORMAT: 24
-  INSECURE_USE_HTTP: 'true'
+  INSECURE_USE_HTTP: 'false'
   ALARM_HIGH: off 
   ALARM_LOW: off 
   ALARM_TIMEAGO_URGENT: off 
@@ -65,7 +65,7 @@ services:
     volumes:
       - ${NS_MONGO_DATA_DIR:-./mongo-data}:/data/db:cached
     ports:
-      - "27018:27017"
+      - "27017"
 
   traefik:
     image: traefik:latest
